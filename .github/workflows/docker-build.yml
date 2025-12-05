@@ -80,8 +80,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64
-          # platforms: linux/amd64,linux/arm64
+          # platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.check_major.outputs.is_major_release == 'true' && steps.meta_with_latest.outputs.tags || steps.meta.outputs.tags }}
           labels: ${{ steps.check_major.outputs.is_major_release == 'true' && steps.meta_with_latest.outputs.labels || steps.meta.outputs.labels }}
